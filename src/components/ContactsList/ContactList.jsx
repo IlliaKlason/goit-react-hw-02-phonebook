@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { Box } from 'components/Box/Box';
 import { List, ListItem } from './ContactList.styled';
 import { Contact } from './Contact/Contact';
 
