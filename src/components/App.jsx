@@ -1,8 +1,9 @@
-import { Boxitem } from './ContactsList/ContactList.styled';
+import Notiflix from 'notiflix';
 
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import { Box } from './Box';
+import { Boxitem } from './ContactsList/ContactList.styled';
 
 import { ContactForm } from './Form';
 import { Filter } from './Filter';
@@ -26,7 +27,7 @@ export class App extends Component {
       el => el.name.toLowerCase() === normalizedName
     );
     if (some) {
-      return alert(`${name} is already in contacts`);
+      return Notiflix.Notify.failure(` ${name} is already in contacts`);
     }
     const contact = {
       id: nanoid(),
