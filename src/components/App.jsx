@@ -24,9 +24,7 @@ export class App extends Component {
 
     this.state.contacts.filter(el => {
       if (el.name.toLowerCase() === normalizedName) {
-        alert(`${name} is already in contacts`);
-      } else {
-        return;
+        return alert(`${name} is already in contacts`);
       }
     });
 
