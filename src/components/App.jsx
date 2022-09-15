@@ -22,12 +22,12 @@ export class App extends Component {
   addContact = ({ name, number }) => {
     const normalizedName = name.toLowerCase();
 
-    this.state.contacts.filter(el => {
-      if (el.name.toLowerCase() === normalizedName) {
-        return alert(`${name} is already in contacts`);
-      }
-    });
-
+    const some = this.state.contacts.some(
+      el => el.name.toLowerCase() === normalizedName
+    );
+    if (some) {
+      return alert(`${name} is already in contacts`);
+    }
     const contact = {
       id: nanoid(),
       name,
